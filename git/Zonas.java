@@ -14,10 +14,10 @@ import java.util.ArrayList;
  * @author Bastian Onetto
  */
 public class Zonas {
-    LocalFolder workspace;
-    LocalFolder index;
-    Repository local;
-    Repository remote;
+    public LocalFolder workspace;
+    public LocalFolder index;
+    public Repository local;
+    public Repository remote;
 
     //constructor
     public Zonas() {
@@ -77,7 +77,7 @@ public class Zonas {
      * Metodo el cual agrega todos los archivos del Workspace encontrados al 
      * Index.
      */
-    void addAllToIndex() {
+    public void addAllToIndex() {
         //Llamamos la lista de archivos
         FileList listaWorks;
         listaWorks = this.workspace.list;
@@ -106,8 +106,17 @@ public class Zonas {
         c.makeCommit(fL);
         this.local.repoCommit(c);
         }
-        
     }
+    
+    public void doCommit(String m){
+        FileList fL = this.index.list;
+        Commit c;
+        c = new Commit();
+        c.makeCommit(fL, m);
+        this.local.repoCommit(c);
+    }
+    
+    
     /**
      * Metodo que toma los commits hechos en el repositorio Local y los pasa
      * al repositorio remoto, pasando tambien la lista de archivos.

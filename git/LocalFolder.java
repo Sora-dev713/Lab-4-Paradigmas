@@ -9,8 +9,8 @@ package git;
  * @author Bastian Onetto
  */
 public class LocalFolder {
-    String indicator;
-    FileList list;
+    public String indicator;
+    public FileList list;
 
     //constructor
     public LocalFolder() {

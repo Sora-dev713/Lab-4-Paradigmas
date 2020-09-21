@@ -12,10 +12,10 @@ import java.util.Scanner;
  * @author Bastian Onetto
  */
 public class GitRepo {
-    private String autor;
-    private Date fecha;
-    private String nombreProyecto;	
-    private Zonas zonas;
+    public String autor;
+    public Date fecha;
+    public String nombreProyecto;	
+    public Zonas zonas;
 
     //constructor    
         
@@ -85,6 +85,13 @@ public class GitRepo {
         this.zonas.agregarAWorkspace();
     }
 
+    public void gitCreateFile(String a, String b){
+        File file = new File();
+        file.createFile(a, b);
+        this.zonas.workspace.list.addFiles(file);
+    }
+
+
     /**
      * Metodo que le pide al usuario una lista de archivos para agregarlos
      * al index, o con "all" que hace que se agreguen todos
@@ -144,6 +151,11 @@ public class GitRepo {
      */
     public void gitCommit(){
         this.zonas.doCommit();
+        this.zonas.index.clearFolder();
+    }
+    
+    public void gitCommit(String m){
+        this.zonas.doCommit(m);
         this.zonas.index.clearFolder();
     }
 

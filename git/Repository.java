@@ -9,9 +9,9 @@ package git;
  * @author Bastian Onetto
  */
 public class Repository {
-    String repoName;
-    CommitList commitList;
-    FileList repoFileList;
+    public String repoName;
+    public CommitList commitList;
+    public FileList repoFileList;
     
     //constructor
     public Repository() {

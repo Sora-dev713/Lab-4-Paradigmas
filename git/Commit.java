@@ -13,9 +13,9 @@ import java.util.Scanner;
  * @author Bastian Onetto
  */
 public class Commit {
-    Date commDate;
-    String mensaje;
-    FileList fileList;
+    public Date commDate;
+    public String mensaje;
+    public FileList fileList;
     
     
     //constructor
@@ -46,6 +46,17 @@ public class Commit {
         }
         //agregamos el mensaje
         this.mensaje = msj;   
+    }
+    public void makeCommit(FileList Fl, String m) {
+        //inicializamos la fecha y la lista de archivos
+        this.commDate = new Date();
+        this.fileList = new FileList();
+        //inicilizamos la lista de archivos
+        this.fileList.startFileList();
+        //mezclamos esa lista con la entrante.
+        this.fileList.mergeFiles(Fl);
+        //agregamos el mensaje
+        this.mensaje = m;   
     }
     
     /**

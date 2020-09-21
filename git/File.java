@@ -65,6 +65,10 @@ public class File {
             SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
             System.out.printf("Nombre del Archivo: %s\nFechaCreacion: %s\nContenido: %s\n", this.nombre,formatter.format(this.fecha),this.contenido);
         }
+
+    public String getName() {
+        return this.nombre;
+    }
         
         
 }

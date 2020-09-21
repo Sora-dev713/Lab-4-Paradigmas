@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * @author Bastian Onetto
  */
 public class FileList {
-    ArrayList<File> FL;
+    public ArrayList<File> FL;
 
     public FileList() {
     }

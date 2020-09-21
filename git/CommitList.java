@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * @author Bastian Onetto
  */
 public class CommitList {
-    ArrayList<Commit> CL;
+    public ArrayList<Commit> CL;
     
     //constructor
     public CommitList(){
@@ -50,7 +50,6 @@ public class CommitList {
         int inicio = this.CL.size();
         //comenzamos desde la cantidad de archivos que tenemos
         for(int i = inicio; i<cl.CL.size(); i++){
-            cl.CL.get(i).printCommit(i);
             this.addCommit(cl.CL.get(i));
         }
     }
