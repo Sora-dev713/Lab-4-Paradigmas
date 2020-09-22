@@ -7,8 +7,8 @@ package GUI;
 
 
 /**
- *
- * @author centr
+ *Ventana que nos permite inicializar un proyecto en git
+ * @author Bastian Onetto
  */
 public class GitInnitFrame extends javax.swing.JFrame {
     Menu ventanaInicio = null;
@@ -19,7 +19,10 @@ public class GitInnitFrame extends javax.swing.JFrame {
     public GitInnitFrame() {
         initComponents();
     }
-    
+    /**
+     * Constructor con el menu anterior
+     * @param ventana 
+     */
     public GitInnitFrame(Menu ventana) {
         initComponents();
         authorMSG.setVisible(false);
@@ -132,6 +135,10 @@ public class GitInnitFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Boton que cancela y nos devuielve al menu anterior
+     * @param evt que es el boton presionado
+     */
     private void cancelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelBtnActionPerformed
         // TODO add your handling code here:
         ventanaInicio.setVisible(true);
@@ -139,6 +146,10 @@ public class GitInnitFrame extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_cancelBtnActionPerformed
 
+    /**
+     * Funcion que toma los datos y crea un proyecto en git
+     * @param evt que es el evento del boton presionado 
+     */
     private void acceptBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acceptBtnActionPerformed
         // TODO add your handling code here:
         String auth = projectAuthorField.getText();

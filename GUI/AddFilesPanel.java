@@ -6,8 +6,8 @@
 package GUI;
 
 /**
- *
- * @author centr
+ * Ventana que nos permite agregar archivos
+ * @author Bastian Onetto
  */
 public class AddFilesPanel extends javax.swing.JFrame {
     
@@ -21,7 +21,7 @@ public class AddFilesPanel extends javax.swing.JFrame {
 
     AddFilesPanel(Menu menu) {
         initComponents();
-        nameMSG.setVisible(true);
+        nameMSG.setVisible(false);
         menu.setVisible(false);
         this.ventanaInicio = menu;
     }
@@ -126,6 +126,10 @@ public class AddFilesPanel extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Funcion que toma los datos y crea un archivo en el workspace
+     * @param evt que es el evento del boton presionado 
+     */
     private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
         // TODO add your handling code here:
         //aqui debo hacer la coneccion con el addFiles del gitRepo
@@ -142,6 +146,10 @@ public class AddFilesPanel extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnAceptarActionPerformed
 
+    /**
+     * Boton que cancela y nos devuielve al menu anterior
+     * @param evt que es el boton presionado
+     */
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         // TODO add your handling code here:
         ventanaInicio.setVisible(true);

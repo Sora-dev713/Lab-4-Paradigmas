@@ -5,12 +5,11 @@
  */
 package GUI;
 
-import git.*;
 import java.util.ArrayList;
 import gitController.GitController;
 /**
- *
- * @author centr
+ * ventana que nos permite agregar archivos al index
+ * @author Bastian Onetto
  */
 public class GitAdd extends javax.swing.JFrame {
     Menu ventanaInicio = null;
@@ -82,7 +81,7 @@ public class GitAdd extends javax.swing.JFrame {
 
         jLabel2.setText("Archivo:");
 
-        addBtn.setText("Añadir");
+        addBtn.setText("Agregar");
         addBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addBtnActionPerformed(evt);
@@ -91,7 +90,7 @@ public class GitAdd extends javax.swing.JFrame {
 
         errorTxt.setText("Texto de Error");
 
-        jLabel4.setText("Archivos Añadidos:");
+        jLabel4.setText("Archivos Agregados:");
 
         fileListTxt.setText("ListaArchivos");
 
@@ -161,6 +160,10 @@ public class GitAdd extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Boton que cancela y nos devuielve al menu anterior
+     * @param evt que es el boton presionado
+     */
     private void cancelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelBtnActionPerformed
         // TODO add your handling code here:
         ventanaInicio.setVisible(true);
@@ -168,6 +171,10 @@ public class GitAdd extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_cancelBtnActionPerformed
 
+    /**
+     * Funcion que toma todos los archivos del workspace y los agrega al index
+     * @param evt que es el evento del boton presionado 
+     */
     private void allBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_allBtnActionPerformed
         // TODO add your handling code here:
         ventanaInicio.gitRep.zonas.addAllToIndex();
@@ -176,6 +183,10 @@ public class GitAdd extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_allBtnActionPerformed
 
+    /**
+     * Funcion que toma los datos y agrega archivos al index
+     * @param evt que es el evento del boton presionado 
+     */
     private void aceptarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarBtnActionPerformed
         // TODO add your handling code here:
         if(!listaArchivos.isEmpty()){
@@ -206,7 +217,7 @@ public class GitAdd extends javax.swing.JFrame {
                     }
                     errorTxt.setVisible(false);
                 }else{
-                    errorTxt.setText("Error: El Archivo ya fue añadido.");
+                    errorTxt.setText("Error: El Archivo ya fue agregado.");
                     errorTxt.setVisible(true);
                 }
             }else{

@@ -1,13 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package GUI;
 
 /**
- *
- * @author centr
+ * Ventana que nos permite Realizr un Commit
+ * @author Bastian Onetto
  */
 public class GitCommit extends javax.swing.JFrame {
     Menu ventanaInicio = null;
@@ -124,6 +120,11 @@ public class GitCommit extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    /**
+     * Boton que realiza el commit
+     * @param evt quie es el evento del boton.
+     */
     private void acceptBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acceptBtnActionPerformed
         // TODO add your handling code here:
         String m = CommentaryBox.getText();
@@ -139,6 +140,10 @@ public class GitCommit extends javax.swing.JFrame {
         
     }//GEN-LAST:event_acceptBtnActionPerformed
 
+    /**
+     * Boton que cancela y nos devuielve al menu anterior
+     * @param evt que es el boton presionado
+     */
     private void cncelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cncelBtnActionPerformed
         // TODO add your handling code here:
         ventanaInicio.setVisible(true);

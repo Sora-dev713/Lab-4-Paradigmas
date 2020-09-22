@@ -136,7 +136,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="addBtn">
       <Properties>
-        <Property name="text" type="java.lang.String" value="A&#xf1;adir"/>
+        <Property name="text" type="java.lang.String" value="Agregar"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addBtnActionPerformed"/>
@@ -149,7 +149,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Archivos A&#xf1;adidos:"/>
+        <Property name="text" type="java.lang.String" value="Archivos Agregados:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="fileListTxt">

@@ -10,8 +10,9 @@ import git.GitRepo;
 import gitController.*;
 
 /**
- *
- * @author centr
+ *Clase Creada para representar el Menu principal, tiene un GitRepo que es el 
+ * que usaremos para todo
+ * @author Bastian Onetto
  */
 public class Menu extends javax.swing.JFrame {
     GitRepo gitRep;
@@ -209,12 +210,21 @@ public class Menu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    /**
+     * Metodo que nos manda a la pagina de inicializacion de commit
+     * @param evt que es el evento del boton presionado
+     */
     private void gitInnitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gitInnitActionPerformed
         // TODO add your handling code here:
         new GitInnitFrame(this).setVisible(true);
         messageTxt.setVisible(false);
     }//GEN-LAST:event_gitInnitActionPerformed
 
+    /**
+     * Funcion que nos entrega la pantalla para agregar archivos
+     * @param evt que es el evento del boton presionado
+     */
     private void addFileBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addFileBtnActionPerformed
         // TODO add your handling code here:
         if(gitRep.autor.equals("") || gitRep.nombreProyecto.equals("")){
@@ -227,6 +237,10 @@ public class Menu extends javax.swing.JFrame {
         
     }//GEN-LAST:event_addFileBtnActionPerformed
 
+    /**
+     * funcion que nos manda a la ventana de agregar a index 
+     * @param evt que es el evento del boton presionado
+     */
     private void gitAddBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gitAddBtnActionPerformed
         // TODO add your handling code here:
         if(gitRep.autor.equals("") || gitRep.nombreProyecto.equals("")){
@@ -243,6 +257,10 @@ public class Menu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_gitAddBtnActionPerformed
 
+    /**
+     * funcion que realiza el push
+     * @param evt que es el evento del boton presionado
+     */
     private void gitPushBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gitPushBtnActionPerformed
         // TODO add your handling code here:
         if(gitRep.autor.equals("") || gitRep.nombreProyecto.equals("")){
@@ -260,6 +278,10 @@ public class Menu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_gitPushBtnActionPerformed
 
+    /**
+     * Funcion que muestra el menu para crear un commit
+     * @param evt que es el evento del boton presionado
+     */
     private void gitCommitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gitCommitBtnActionPerformed
         // TODO add your handling code here:
         if(gitRep.autor.equals("") || gitRep.nombreProyecto.equals("")){
@@ -276,6 +298,10 @@ public class Menu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_gitCommitBtnActionPerformed
 
+    /**
+     * Funcion que realiza el Pull de cumplirse las condiciones
+     * @param evt que es el evento del boton presionado 
+     */
     private void gitPullBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gitPullBtnActionPerformed
         // TODO add your handling code here:
         if(gitRep.autor.equals("") || gitRep.nombreProyecto.equals("")){
@@ -293,6 +319,10 @@ public class Menu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_gitPullBtnActionPerformed
 
+    /**
+     * Funcion que nos muestra el estado de todas las zonas del Proyecto
+     * @param evt que es el evento del boton presionado 
+     */
     private void gitStatusBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gitStatusBtnActionPerformed
         // TODO add your handling code here:
         if(gitRep.autor.equals("") || gitRep.nombreProyecto.equals("")){
@@ -305,18 +335,30 @@ public class Menu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_gitStatusBtnActionPerformed
 
+    /**
+     * Metodo que muestra el estado del Workspace
+     * @param evt que es el evento del boton presionado 
+     */
     private void wrkspcBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wrkspcBtnActionPerformed
         GitController controlador = new GitController(); 
         statShow.setText(controlador.LocFoldToString(gitRep.zonas.workspace));
         messageTxt.setVisible(false);
     }//GEN-LAST:event_wrkspcBtnActionPerformed
 
+    /**
+     * Metodo que muestra el estado del Index
+     * @param evt que es el evento del boton presionado 
+     */
     private void indexBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_indexBtnActionPerformed
         GitController controlador = new GitController(); 
         statShow.setText(controlador.LocFoldToString(gitRep.zonas.index));
         messageTxt.setVisible(false);
     }//GEN-LAST:event_indexBtnActionPerformed
 
+    /**
+     * Metodo que muestra el estado del Remote Repository
+     * @param evt que es el evento del boton presionado 
+     */
     private void remRepoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remRepoBtnActionPerformed
         // TODO add your handling code here:
         GitController controlador = new GitController(); 
@@ -324,6 +366,10 @@ public class Menu extends javax.swing.JFrame {
         messageTxt.setVisible(false);
     }//GEN-LAST:event_remRepoBtnActionPerformed
 
+    /**
+     * Metodo que muestra el estado del Local Repository
+     * @param evt que es el evento del boton presionado 
+     */
     private void locRepoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_locRepoBtnActionPerformed
         // TODO add your handling code here:
         GitController controlador = new GitController(); 
